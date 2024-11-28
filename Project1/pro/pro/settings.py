@@ -15,6 +15,14 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+#cloudinary
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+
+
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -37,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary',
     'Webapp',    
 ] 
 
@@ -122,3 +131,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#cloudinary-- django integration
+cloudinary.config( 
+    cloud_name = "dl2hcx3sr", 
+    api_key = "646191585138431", 
+    api_secret = "2kgtEQToSDyX3WFe2Cz6NhAdBT4", # Click 'View API Keys' above to copy your API secret
+    secure=True
+)

@@ -1,6 +1,26 @@
-<nav class="navbar navbar-expand-lg " style="background-color: #e3f2fd;" >
+<style>
+  li{
+    gap:10px
+  }
+  img {
+    height: 53px;
+    width: 100px;
+    margin-right:25px;
+  }
+  nav.navbar {
+    padding: 0px 30px; /* Reduced padding */
+
+}
+</style>
+<nav class="navbar navbar-expand-lg " style="background-color: #CCFF33;" >
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">NazFoods</a>
+      <a class="navbar-brand" href="#">
+        <img 
+            class="logo" 
+            src="https://res.cloudinary.com/dl2hcx3sr/image/upload/v1732802569/tt5ce41neyzb4fpscfvk.png" 
+            alt="Logo"
+        >
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -9,8 +29,16 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-house"></i>Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa-solid fa-bag-shopping"></i>Products</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-user"></i>Products
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Malt</a></li>
+              <li><a class="dropdown-item" href="#"></a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#"> </a></li>
+            </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

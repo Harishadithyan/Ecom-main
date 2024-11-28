@@ -1,4 +1,6 @@
 from django.shortcuts import render
-
+from .models import photo
 def index(request):
-    return render(request,"index.html")
+    image = photo.objects.all()
+    cloudinary_img={'photo':photo}
+    return render(request,"index.html",cloudinary_img)
