@@ -1,0 +1,148 @@
+<style>
+    /* Same as before */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Add a container to hold the cards and arrange them in a horizontal layout */
+    .cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to the next row if the screen is too narrow */
+    justify-content: center; /* Centers cards horizontally */
+    gap: 20px; /* Adds spacing between cards */
+    padding: 10px;
+    }
+    
+    /* Adjust card width for a consistent layout */
+    .card {
+    flex: 0 0 300px; /* Ensures each card is 300px wide */
+    margin: 0; /* Remove redundant margin */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    justify-content: flex-start; /* Align items to the top of the card */
+    height: auto; /* Let content flow naturally */
+    }
+    
+    /* Product image stays at the top and spans the width */
+    .product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px; /* Small space below image */
+    }
+    
+    /* Title of the product */
+    .product-title {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #333;
+    }
+    
+    /* Description of the product */
+    .product-description {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+    }
+    
+    /* Price styling */
+    .product-price {
+    font-size: 1.2em;
+    color: #28a745;
+    margin-bottom: 15px;
+    font-weight: bold;
+    }
+    
+    /* Counter Section */
+    .counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    }
+    
+    /* Counter buttons */
+    .counter .btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    }
+    
+    .counter .btn:hover {
+    background: #0056b3;
+    }
+    
+    /* Display count number */
+    .counter .count {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0 15px;
+    }
+    
+    /* Buttons */
+    .buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    }
+    
+    .btn {
+    flex: 1;
+    padding: 10px;
+    font-size: 0.9em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    }
+    
+    .add-to-cart {
+    background: #28a745;
+    color: #fff;
+    }
+    
+    .add-to-cart:hover {
+    background: #218838;
+    }
+    
+</style>
+    
+    
+
+{% extends "layout/main.html" %}
+
+{% block title %}
+    {{ category.name }} - Products
+{% endblock title %}
+
+{% block content %}
+<h1>{{ category.name }}</h1>
+<div class="cards-container">
+    {% for card in cards %}
+    <div class="card">
+        <img src="{{ card.image }}" alt="Product Image" class="product-image">
+        <h2 class="product-title">{{ card.name }}</h2>
+        <p class="product-description">{{ card.Des }}</p>
+        <div class="product-price">Price:₹{{ card.Price }}</div>
+        <div class="buttons">
+            <button class="btn add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock content %}

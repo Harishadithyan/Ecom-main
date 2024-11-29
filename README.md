@@ -107,3 +107,33 @@ auto_crop_url, _ = cloudinary_url("shoes", width=500, height=500, crop="auto", g
 print(auto_crop_url)
 
 -------------------------------------------------
+Counter:
+
+<div class="counter">
+  <button class="btn decrement">-</button>
+  <span class="count">1</span>
+  <button class="btn increment">+</button>
+</div>
+
+<script>
+    const decrementBtn = document.querySelector('.decrement');
+    const incrementBtn = document.querySelector('.increment');
+    const countDisplay = document.querySelector('.count');
+
+// Initialize count
+    let count = 1;
+
+// Decrease count
+    decrementBtn.addEventListener('click', () => {
+        if (count > 1) {
+        count--;
+        countDisplay.textContent = count;
+    }
+    });
+
+// Increase count
+    incrementBtn.addEventListener('click', () => {
+    count++;
+    countDisplay.textContent = count;
+    });
+</script>
